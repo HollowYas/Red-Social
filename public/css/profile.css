@@ -1,0 +1,101 @@
+/* Profile.css */
+/* Estilos generales */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    height: 100vh;
+}
+
+/* Estilo del contenedor principal */
+.completarperfil {
+    width: 500px;
+    max-width: 1750px;
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-left: -20px; 
+}
+
+.container {
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    width: 100%;
+    max-width: 500px;
+}
+
+/* Estilo de texto */
+.text-center {
+    text-align: center;
+}
+
+h2 {
+    font-size: 28px;
+    color: #5a5a89;
+    margin-bottom: 10px;
+}
+
+h6 {
+    font-size: 16px;
+    color: #7f7f99;
+    margin-bottom: 20px;
+}
+
+/* Estilos del formulario */
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-control {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 14px;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    color: #5a5a89;
+}
+
+.custom-file-input {
+    display: block;
+    width: 100%;
+    padding: 8px;
+    font-size: 14px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+}
+
+/* Estilos del botón */
+.btn-purple {
+    background-color: #6c63ff;
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn-purple:hover {
+    background-color: #5549d3;
+}
+
+/* Centrar contenido */
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+

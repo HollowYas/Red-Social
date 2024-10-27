@@ -1,0 +1,118 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    padding-top: 80px;
+}
+
+header {
+    background-color: rgb(0, 255, 21); 
+    position: fixed; 
+    width: 100%; 
+    z-index: 1000;
+    top: 0;
+}
+
+.navbar {
+    display: flex;
+    background-color: #000000; 
+    padding: 12px 22px;
+    justify-content: space-between;
+}
+
+.navbar-brand i {
+    font-size: 1.5rem; 
+    color: #000000; 
+}
+
+.navbar-nav .nav-link {
+    background-color: rgb(255, 255, 255); 
+    color: #000000; 
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+    border-radius: 30px; 
+    transition: background-color 0.8s; 
+    border-color: #000000;
+    margin-right: 20px;
+}
+
+.navbar-nav .nav-link:hover {
+    background-color: rgb(0, 255, 21); 
+    color: #000000; 
+}
+.navbar .dropdown-menu {
+    margin-left: -20px; 
+    transform: translateX(-50%); 
+    min-width: 200px; 
+}
+
+.navbar .dropdown-item {
+    padding-top: 5px;
+    padding-bottom: 5px;
+    margin-bottom: 5px;     
+}
+
+
+.dropdown-item {
+    border: 1px solid rgb(0, 0, 0); 
+    border-radius: 30px; 
+    transition: background-color 0.3s, color 0.3s; 
+}
+
+.dropdown-item:hover {
+    background-color: rgb(0, 255, 21); 
+    color: #000000; 
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* Barra de búsqueda */
+.input-group {
+    width: 500px; 
+}
+
+.form-control {
+    border-radius: 30px; 
+    padding: 0.5rem 1rem;
+    border: 1px solid #000000; 
+}
+
+.form-control:focus {
+    border-color: #000000; 
+    box-shadow: none; 
+}
+
+.btn-outline-success {
+    border-radius: 30px; 
+    border-color: #000000; 
+    color: #000000; 
+    padding: 0.5rem 1.5rem; 
+}
+
+.btn-outline-success:hover {
+    background-color: rgb(0, 255, 21); 
+    color: rgb(0, 0, 0); 
+    border-color: rgb(0, 0, 0); 
+}
+
+/* Estilo del ícono dentro del botón */
+.btn-outline-success i {
+    margin: 0; 
+}
+
+/* Media Queries para Responsividad */
+@media (max-width: 768px) {
+    .navbar-nav .nav-link{
+        flex-direction: column; 
+        width: 100%; 
+    }
+
+    .input-group {
+        width: 100%; 
+        margin-top: 0.5rem; 
+    }
+
+    .navbar-nav .nav-link {
+        width: 100%; 
+        text-align: center; 
+    }
+}

@@ -1,0 +1,296 @@
+/* Estilos generales */
+body {
+    background-color: #f2eca6;
+    font-family: Arial, sans-serif;
+}
+
+/* Contenedor principal */
+.container {
+    padding: 5px;   
+}
+
+.row {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+/* Columna Perfil */
+.col-md-3 {
+    padding: 15px;
+}
+
+.container-style-main {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-bottom: 10px;
+}
+
+/* Perfil del usuario */
+.perfil-usuario-main {
+    text-align: center;
+}
+
+.background-usuario-main {
+    position: relative;
+}
+
+.background-usuario-main img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 3px solid #ddd;
+    margin-bottom: 10px;
+}
+
+.nombre-perfil {
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.tabla-estadisticas {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+    font-size: 14px;
+    color: #555;
+}
+
+.tabla-estadisticas a {
+    text-decoration: none;
+    color: #555;
+    transition: color 0.3s;
+}
+
+.tabla-estadisticas a:hover {
+    color: #333;
+}
+
+/* Columna Principal */
+.col-md-6 {
+    padding: 15px;
+}
+
+.container-usuario-publicar {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 30px; /* Aumenta el margen para separar las publicaciones */
+    padding: 20px;
+    background-color: #f8f9fa;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.container-usuario-publicar img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 15px;
+}
+
+.published {
+    width: 100%;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 10px;
+    resize: none;
+    outline: none;
+    font-size: 14px;
+}
+
+/* Estilos de subida de imágenes y botones */
+.image-upload-file {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+.upload-photo {
+    display: flex;
+    align-items: center;
+}
+
+.upload-photo i {
+    font-size: 20px;
+    color: #1100ff;
+}
+
+.input-file {
+    display: none;
+}
+
+.btn-publi {
+    background-color: rgb(0, 255, 21);
+    color: rgb(0, 0, 0);
+    border: none;
+    padding: 10px 20px;
+    border-radius: 15px;
+    cursor: pointer;
+    margin-left: 255px;
+    height: 46px;
+}
+
+.btn-publi:hover {
+    background-color: rgb(0, 207, 17);
+    transition: background-color 0.3s;
+}
+
+/* Contenedor para publicaciones de usuarios */
+.container-usuarios-publicaciones {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-bottom: 30px; /* Aumenta el margen inferior para separar entre publicaciones */
+    margin-top: 30px; /* Aumenta el margen superior para mayor separación de la sección de publicar */
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+/* Estilo para la columna de eventos, aunque no hay contenido ahora */
+.col-md-3 {
+    padding: 15px;
+}
+
+.custom-file-upload {
+    display: inline-block;
+    position: relative;
+    margin-top: 10px;
+}
+
+.custom-file-upload input[type="file"] {
+    display: none; 
+}
+
+.custom-file-upload label {
+    display: flex; 
+    align-items: center;
+    justify-content: center; 
+    background-color: rgb(0, 255, 21); 
+    color: rgb(0, 0, 0);              
+    padding: 10px 20px;
+    border-radius: 15px;
+    cursor: pointer;
+    font-size: 14px;    
+    width: 100%; 
+    text-align: center;
+    transition: background-color 0.3s;
+    height: 46px;
+}
+
+.custom-file-upload label:hover {
+    background-color: rgb(0, 207, 17);
+    transition: background-color 0.3s; 
+}
+
+.custom-file-upload i {
+    color: rgb(0, 0, 0); 
+    margin-right: 10px; 
+}
+
+.upload-photo {
+    display: flex;
+    justify-content: flex-end; 
+}
+
+/* Estilos generales para publicaciones */
+.container-usuarios-publicaciones {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    margin-bottom: 20px;
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+.container-usuarios-publicaciones:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Parte superior de las publicaciones (usuario y fecha) */
+.usuarios-publicaciones-top {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.image-border {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 2px solid #ddd;
+    margin-right: 15px;
+}
+
+.informacion-usuario-publico {
+    display: flex;
+    flex-direction: column;
+}
+
+.informacion-usuario-publico h6 {
+    margin: 0;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.informacion-usuario-publico a {
+    color: #007bff;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.informacion-usuario-publico a:hover {
+    color: #0056b3;
+}
+
+.informacion-usuario-publico span {
+    font-size: 12px;
+    color: #777;
+}
+
+/* Contenido de la publicación */
+.contenido-publicacion-usuario {
+    margin-top: 10px;
+}
+
+.contenido-publicacion-usuario p {
+    font-size: 14px;
+    color: #333;
+    line-height: 1.5;
+}
+
+/* Imagen de la publicación */
+.imagen-publicacion-usuario {
+    width: 100%;
+    height: auto;
+    margin-top: 10px;
+    border-radius: 10px;
+    object-fit: cover;
+    max-height: 400px;
+}
+
+
+/* Responsive: ajusta columnas en pantallas pequeñas */
+@media (max-width: 768px) {
+    .container-style-main {
+        width: 100%;
+        padding: 15px;
+    }
+
+    .container-usuario-publicar img {
+        width: 40px;
+        height: 40px;
+    }
+
+    .btn-publi {
+        width: 100%;
+        margin-top: 10px;
+    }
+
+    .upload-photo i {
+        font-size: 16px;
+    }
+}

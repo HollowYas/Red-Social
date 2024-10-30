@@ -215,6 +215,13 @@ body {
     display: flex;
     align-items: center;
     margin-bottom: 10px;
+    /* justify-content: space-between; */
+}
+
+.acciones-publicacion-usuario {
+    color: #000000;     
+    font-size: 20px; 
+    margin-left: 390px;
 }
 
 .image-border {
@@ -292,5 +299,9 @@ body {
 
     .upload-photo i {
         font-size: 16px;
+    }
+
+    .acciones-publicacion-usuario {
+        font-size: 18px;
     }
 }

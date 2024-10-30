@@ -12,17 +12,23 @@ class Perfil extends controller
     public function index($user)
     {
         if (isset($_SESSION['logueado'])) {
-            $datosUsuario = $this->usuario->getUsuario($_SESSION['usuario']);
-            $datosPerfil = $this->usuario->getPerfil($_SESSION['logueado']);
+            $datosUsuarioSesion = $this->usuario->getUsuario($_SESSION['usuario']);
+
+            // Obtener el perfil de quien se quiere ver
+            $datosPerfil = $this->usuario->getPerfilPorUsuario($user);
 
             if ($datosPerfil) {
                 $datosRed = [
-                    'usuario' => $datosUsuario,
-                    'perfil' => $datosPerfil
+                    'usuario' => $datosUsuarioSesion,  // Usuario logueado
+                    'perfil' => $datosPerfil            // Perfil de quien se quiere ver
                 ];
                 $this->view('pages/perfil/perfil', $datosRed);
-
+            } else {
+                // Redirigir si el usuario no existe
+                redirection('/home');
             }
+        } else {
+            redirection('/login');
         }
     }
 

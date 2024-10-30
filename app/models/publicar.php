@@ -23,18 +23,34 @@ class publicar
         }
     }
 
+    public function getPublicacion($id)
+    {
+        $this->db->query('SELECT * FROM publicaciones WHERE idpublicacion = :id');
+        $this->db->bind(':id', $id);
+        return $this->db->register();
+    }
 
     public function getPublicaciones()
     {
-        $this->db->query('SELECT P.contenidoPublicacion, P.fotoPublicacion, P.fechaPublicacion, U.usuario, Per.fotoPerfil FROM publicaciones P 
+        $this->db->query('SELECT P.idpublicacion, P.contenidoPublicacion, P.fotoPublicacion, P.fechaPublicacion, U.usuario, Per.fotoPerfil FROM publicaciones P 
         INNER JOIN usuarios U ON U.idusuario = P.idUserPublico
-        INNER JOIN perfil Per ON Per.idUsuario = P.idUserPublico');
+        INNER JOIN perfil Per ON Per.idUsuario = P.idUserPublico
+        ORDER BY P.fechaPublicacion DESC');
         return $this->db->registers(); 
     }
 
-    // public function getPublicacionUsuario($datosPublicaciones)
-    // {
-    //     //var_dump($datosPublicaciones);
-    //     $this->db->query('SELECT * FROM publicaciones ');
-    // }
+    public function eliminarPublicacion($publicacion)
+    {
+        $this->db->query('DELETE FROM publicaciones where idpublicacion = :id');
+        $this->db->bind(':id', $publicacion->idpublicacion);
+        if( $this->db->execute()) 
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
+    
 }

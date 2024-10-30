@@ -42,4 +42,27 @@ class Publicaciones extends Controller
             echo 'Algo salio mal... :(';
         }
     }
+
+    public function eliminar($idpublicacion)
+    {        
+    $publicacion = $this->publicar->getPublicacion($idpublicacion);
+
+    if ($publicacion) {
+        // Construye la ruta absoluta de la imagen en el servidor
+        $rutaImagen = 'C:/xampp/htdocs/REDSOCIAl/public/' . $publicacion->fotoPublicacion;
+
+        // Primero elimina la publicación en la base de datos
+        if ($this->publicar->eliminarPublicacion($publicacion)) {
+            // Verifica si la imagen existe antes de intentar eliminarla
+            if (file_exists($rutaImagen)) {
+                unlink($rutaImagen); // Elimina la imagen del servidor
+            }
+            redirection('/home');
+        } else {
+            echo 'Hubo un error al intentar eliminar la publicación.';
+        }
+    } else {
+        echo 'La publicación no existe o ya ha sido eliminada.';
+    }
+    }
 }

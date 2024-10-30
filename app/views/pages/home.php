@@ -67,7 +67,9 @@ include_once URL_APP . '/views/custom/navbar.php';
                                           ($datosPublicaciones->usuario) ?></a></h6>
                             <span><?php echo $datosPublicaciones->fechaPublicacion ?></span>
                         </div>
-
+                        <div class="acciones-publicacion-usuario">
+                            <a href="<?php echo URL_PROJECT?>/Publicaciones/eliminar/<?php echo $datosPublicaciones->idpublicacion?>"><i class="ri-delete-bin-line"></i></a>
+                        </div>
                     </div>
                     <div class="contenido-publicacion-usuario">
                         <p class="mb-1"><?php echo $datosPublicaciones->contenidoPublicacion ?></p>

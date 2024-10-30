@@ -67,13 +67,25 @@ class usuario
         $this->db->bind(':id', $datos['idUsuario']);
         $this->db->bind(':rutaFoto', $datos['ruta']);
         $this->db->bind(':nombre', $datos['nombre']);
-        $this->db->bind(':rutaPortada', $datos['rutaPortada']); 
+        $this->db->bind(':rutaPortada', $datos['rutaPortada']);
 
         if ($this->db->execute()) {
             return true;
         } else {
             return false;
         }
+    }
+
+    public function getPerfilPorUsuario($usuarioNombre)
+    {
+        $this->db->query("
+        SELECT p.* 
+        FROM perfil p 
+        INNER JOIN usuarios u ON u.idusuario = p.idUsuario 
+        WHERE u.usuario = :usuarioNombre
+    ");
+        $this->db->bind(':usuarioNombre', $usuarioNombre);
+        return $this->db->register();
     }
 
 }

@@ -6,6 +6,7 @@ include_once URL_APP . '/views/custom/header.php';
 
 ?>
 
+<div class="container-login"></div>
 <div class="container-center center">
     <div class="container-content center">
         <div class="content-action center">
@@ -44,7 +45,7 @@ include_once URL_APP . '/views/custom/header.php';
         <div class="content-image center">
             <img src="<?php echo URL_PROJECT ?>/img/header.png" alt="Hombre sentado en computadora">
         </div>
-    </div>
+    </div>        
 </div>
 
 <?php

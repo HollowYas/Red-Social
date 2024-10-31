@@ -14,7 +14,11 @@ class Home extends Controller
 
             $datosUsuario = $this->usuario->getUsuario($_SESSION['usuario']);
             $datosPerfil = $this->usuario->getPerfil($_SESSION['logueado']);
+            
             $datosPublicaciones = $this->publicaciones->getPublicaciones();
+            
+            $verificarLIke = $this->publicaciones->misLikes($_SESSION['logueado']);
+            
             //Recoger datos de las publicaciones
             //$userPublicacion = $this->publicaciones->getPublicacionUsuario($datosPublicaciones);
 
@@ -22,7 +26,8 @@ class Home extends Controller
                 $datosRed = [
                     'usuario' => $datosUsuario,
                     'perfil' => $datosPerfil,
-                    'publicaciones' => $datosPublicaciones
+                    'publicaciones' => $datosPublicaciones,
+                    'misLikes' => $verificarLIke
                 ];
                 $this->view('pages/home', $datosRed);
 

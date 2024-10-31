@@ -293,6 +293,11 @@ body {
     text-decoration: none;
 }
 
+/* .like-active
+{
+    color: #00cf11;
+} */
+
 .acciones-usuario-publicar a:hover {
     color: #00cf11;
 }

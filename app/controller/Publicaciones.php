@@ -9,7 +9,7 @@ class Publicaciones extends Controller
 
     public function publicar($idusuario)
     {
-        $rutaImagen = 'No Image'; 
+        $rutaImagen = 'No Image';
 
         // Verificar si se subió un archivo y no tiene errores
         if (isset($_FILES['imagen']) && $_FILES['imagen']['error'] === UPLOAD_ERR_OK) {
@@ -28,7 +28,7 @@ class Publicaciones extends Controller
                 $rutaImagen = 'No Image';
             }
         }
-        
+
         $datos = [
             'iduser' => trim($idusuario),
             'contenido' => trim($_POST['contenido']),
@@ -44,43 +44,48 @@ class Publicaciones extends Controller
     }
 
     public function eliminar($idpublicacion)
-    {        
-    $publicacion = $this->publicar->getPublicacion($idpublicacion);
+    {
+        $publicacion = $this->publicar->getPublicacion($idpublicacion);
 
-    if ($publicacion) {
-        // Construye la ruta absoluta de la imagen en el servidor
-        $rutaImagen = 'C:/xampp/htdocs/REDSOCIAl/public/' . $publicacion->fotoPublicacion;
+        if ($publicacion) {
+            // Construye la ruta absoluta de la imagen en el servidor
+            $rutaImagen = 'C:/xampp/htdocs/REDSOCIAl/public/' . $publicacion->fotoPublicacion;
 
-        // Primero elimina la publicación en la base de datos
-        if ($this->publicar->eliminarPublicacion($publicacion)) {
-            // Verifica si la imagen existe antes de intentar eliminarla
-            if (file_exists($rutaImagen)) {
-                unlink($rutaImagen); // Elimina la imagen del servidor
+            // Primero elimina la publicación en la base de datos
+            if ($this->publicar->eliminarPublicacion($publicacion)) {
+                // Verifica si la imagen existe antes de intentar eliminarla
+                if (file_exists($rutaImagen)) {
+                    unlink($rutaImagen); // Elimina la imagen del servidor
+                }
+                redirection('/home');
+            } else {
+                echo 'Hubo un error al intentar eliminar la publicación.';
             }
-            redirection('/home');
         } else {
-            echo 'Hubo un error al intentar eliminar la publicación.';
+            echo 'La publicación no existe o ya ha sido eliminada.';
         }
-    } else {
-        echo 'La publicación no existe o ya ha sido eliminada.';
-    }
     }
 
     public function megusta($idpublicacion, $idusuario)
     {
         $datos = [
             'idpublicacion' => $idpublicacion,
-            'idusuario'=> $idusuario
+            'idusuario' => $idusuario
         ];
 
-        if ($this->publicar->rowLikes($datos)) 
-        {
-            echo 'Hay algo c:';
+        $datosPublicacion = $this->publicar->getPublicacion($idpublicacion);
+
+        if ($this->publicar->rowLikes($datos)) {
+            if ($this->publicar->eliminarLike($datos)) {
+                $this->publicar->deleteLikeCount($datosPublicacion);
+            }
+            redirection('/home');
+        } else {
+            if ($this->publicar->agregarLike($datos)) {
+                $this->publicar->addLikeCount($datosPublicacion);
+            }
+            redirection('/home');
         }
-        else
-        {
-            echo 'No hay nada :c';
-        }
-        
+
     }
 }

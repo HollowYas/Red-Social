@@ -68,7 +68,9 @@ include_once URL_APP . '/views/custom/navbar.php';
                             <span><?php echo $datosPublicaciones->fechaPublicacion ?></span>
                         </div>
                         <div class="acciones-publicacion-usuario">
-                            <a href="<?php echo URL_PROJECT?>/Publicaciones/eliminar/<?php echo $datosPublicaciones->idpublicacion?>"><i class="ri-delete-bin-line"></i></a>
+                            <a
+                                href="<?php echo URL_PROJECT ?>/Publicaciones/eliminar/<?php echo $datosPublicaciones->idpublicacion ?>"><i
+                                    class="ri-delete-bin-line"></i></a>
                         </div>
                     </div>
                     <div class="contenido-publicacion-usuario">
@@ -76,8 +78,14 @@ include_once URL_APP . '/views/custom/navbar.php';
                         <img src="<?php echo URL_PROJECT . '/' . $datosPublicaciones->fotoPublicacion ?>" alt=""
                             class="imagen-publicacion-usuario">
                     </div>
-                    <div class="acciones-usuario-publicar mt-2">
-                        <a href="<?php echo URL_PROJECT ?>/publicaciones/megusta/<?php echo $datosPublicaciones->idpublicacion . '/' . $_SESSION['logueado'] ?>"><i class="ri-thumb-up-line"></i> Me gusta</a>
+                    <div class="acciones-usuario-publicar">
+                        <a href="<?php echo URL_PROJECT ?>/publicaciones/megusta/<?php echo $datosPublicaciones->idpublicacion . '/' . $_SESSION['logueado'] ?>"
+                            class="
+                                <?php foreach ($datos['misLikes'] as $mislikesUser) {
+                                    if ($mislikesUser->idPublicacion == $datosPublicaciones->idpublicacion) {
+                                        echo 'like-active';
+                                    }
+                                } ?>"><i class="ri-thumb-up-line"></i> Me gusta <span><?php echo $datosPublicaciones->num_likes ?></span></a>
                         <a href=""><i class="ri-message-3-line"></i> Comentar</a>
                     </div>
                 </div>

@@ -52,5 +52,14 @@ class publicar
             return false;
         }
     }
+
+    public function rowLikes($datos)
+    {
+        $this->db->query('SELECT * FROM likes WHERE idPublicacion = :publicacion AND idUser = :iduser');
+        $this->db->bind(':publicacion', $datos['idpublicacion']);
+        $this->db->bind(':iduser', $datos['idusuario']);
+        $this->db->execute();
+        return $this->db->rowCount();
+    }
     
 }

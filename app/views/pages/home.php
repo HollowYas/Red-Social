@@ -76,6 +76,10 @@ include_once URL_APP . '/views/custom/navbar.php';
                         <img src="<?php echo URL_PROJECT . '/' . $datosPublicaciones->fotoPublicacion ?>" alt=""
                             class="imagen-publicacion-usuario">
                     </div>
+                    <div class="acciones-usuario-publicar mt-2">
+                        <a href="<?php echo URL_PROJECT ?>/publicaciones/megusta/<?php echo $datosPublicaciones->idpublicacion . '/' . $_SESSION['logueado'] ?>"><i class="ri-thumb-up-line"></i> Me gusta</a>
+                        <a href=""><i class="ri-message-3-line"></i> Comentar</a>
+                    </div>
                 </div>
             <?php endforeach ?>
         </div>

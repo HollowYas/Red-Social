@@ -65,4 +65,22 @@ class Publicaciones extends Controller
         echo 'La publicación no existe o ya ha sido eliminada.';
     }
     }
+
+    public function megusta($idpublicacion, $idusuario)
+    {
+        $datos = [
+            'idpublicacion' => $idpublicacion,
+            'idusuario'=> $idusuario
+        ];
+
+        if ($this->publicar->rowLikes($datos)) 
+        {
+            echo 'Hay algo c:';
+        }
+        else
+        {
+            echo 'No hay nada :c';
+        }
+        
+    }
 }

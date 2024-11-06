@@ -145,8 +145,8 @@ body {
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     padding: 20px;
-    margin-bottom: 30px; /* Aumenta el margen inferior para separar entre publicaciones */
-    margin-top: 30px; /* Aumenta el margen superior para mayor separación de la sección de publicar */
+    margin-bottom: 30px; 
+    margin-top: 30px; 
     transition: box-shadow 0.3s ease-in-out;
 }
 
@@ -291,6 +291,7 @@ body {
     gap: 5px;
     color:#1100ff;
     text-decoration: none;
+    padding-top: 10px;
 }
 
 /* .like-active
@@ -301,6 +302,68 @@ body {
 .acciones-usuario-publicar a:hover {
     color: #00cf11;
 }
+
+/* Seccion de Comentarios */
+.formulario-cometarios {
+    display: flex;
+    align-items: center;
+    margin-top: 5px;
+    padding: 10px;
+    /* border-top: 1px solid #e0e0e0; */
+}
+
+/* Estilo de la imagen de perfil */
+.formulario-cometarios img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+    object-fit: cover;
+}
+
+/* Estilo del área de acciones del formulario */
+.acciones-formulario-comentario {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+}
+
+/* Estilo del campo de texto del comentario */
+.form-comentario-usuario {
+    width: 100%;
+    padding: 8px 12px;
+    border-radius: 20px;
+    border: 1px solid #ccc;
+    outline: none;
+    font-size: 14px;
+}
+
+/* Contenedor del botón de comentario */
+.btn-comentario-container {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 5px;
+}
+
+/* Estilo del botón de comentar */
+.btn-comentario-container .btn-purple {
+    background-color: rgb(15, 0, 128);
+    color: white;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 14px;
+    height: 30px;
+    margin-left: 320px;
+    
+}
+
+/* Efecto hover en el botón de comentar */
+.btn-comentario-container .btn-purple:hover {
+    background-color: #00cf11;
+}
+
 
 /* Responsive: ajusta columnas en pantallas pequeñas */
 @media (max-width: 768px) {

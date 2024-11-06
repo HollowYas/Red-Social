@@ -85,8 +85,21 @@ include_once URL_APP . '/views/custom/navbar.php';
                                     if ($mislikesUser->idPublicacion == $datosPublicaciones->idpublicacion) {
                                         echo 'like-active';
                                     }
-                                } ?>"><i class="ri-thumb-up-line"></i> Me gusta <span><?php echo $datosPublicaciones->num_likes ?></span></a>
-                        <a href=""><i class="ri-message-3-line"></i> Comentar</a>
+                                } ?>"><i class="ri-thumb-up-line"></i> Me gusta
+                            <span><?php echo $datosPublicaciones->num_likes ?></span></a>
+                        <a href="#" id="comentarBtn"><i class="ri-chat-1-line"></i> Comentar</a>
+                    </div>
+                    <hr>
+                    <div class="formulario-cometarios">
+                        <img src="<?php echo URL_PROJECT . '/' . $datos['perfil']->fotoPerfil ?>" alt="">
+                        <div class="acciones-formulario-comentario">
+                            <form action="">
+                                <input type="text" class="form-comentario-usuario" placeholder="Agregar comentario" required>
+                                <div class="btn-comentario-container">
+                                    <button class="btn-purple">Comentar</button>
+                                </div>
+                            </form>
+                        </div>
                     </div>
                 </div>
             <?php endforeach ?>
